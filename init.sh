@@ -76,3 +76,22 @@ if ask "Do you want to install midnight commander config (--> $path)?"; then
   fi
 fi
 
+path=$(eval echo ~/.config/tmux)
+if ask "Do you want to install tmux config? (--> $path)"; then
+  if is_installed tmux; then
+    success "tmux is installed"
+  else
+    warning "tmux is not installed"
+  fi
+
+  if check_link "$path"; then
+    warning "$path already exists."
+  else
+    if ln -s "$(realpath "tmux")" "$path"; then
+      success "installed tmux config."
+    else
+      error "could not link."
+    fi
+  fi
+fi
+

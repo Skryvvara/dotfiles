@@ -8,5 +8,5 @@ My personal collection of dotfiles.
 - [ ] [k9s](https://k9scli.io/)
 - [ ] [iterm2](https://iterm2.com/)
 - [ ] [zsh](https://de.wikipedia.org/wiki/Z_shell)
-- [ ] [tmux](https://github.com/tmux/tmux)
+- [x] [tmux](https://github.com/tmux/tmux)
 - [ ] fonts

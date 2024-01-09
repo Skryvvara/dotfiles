@@ -1,3 +1,2 @@
-nvim/nvim
 nvim/plugin/packer_compiled.lua
-mc/mc
+tmux/plugins
