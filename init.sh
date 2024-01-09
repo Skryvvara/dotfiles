@@ -49,8 +49,30 @@ if ask "Do you want to install neovim config (--> $path)?"; then
   if check_link "$path"; then
     warning "$path already exists."
   else
-	  ln -s "$(realpath "nvim")" "$path"
-    success "installed nvim config."
+	  if ln -s "$(realpath "nvim")" "$path"; then
+      success "installed nvim config."
+    else
+      error "could not link."
+    fi
+  fi
+fi
+
+path=$(eval echo ~/.config/mc)
+if ask "Do you want to install midnight commander config (--> $path)?"; then
+  if is_installed mc; then
+    success "mc is installed."
+  else
+    warning "mc is not installed."
+  fi
+
+  if check_link "$path"; then
+    warning "$path already exists."
+  else
+    if ln -s "$(realpath "mc")" "$path"; then
+      success "instaled mc config."
+    else
+      error "could not link."
+    fi
   fi
 fi
 
