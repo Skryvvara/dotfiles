@@ -7,6 +7,7 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
         'clangd',
+        'bashls',
         'tsserver',
         'eslint',
         'lua_ls',
