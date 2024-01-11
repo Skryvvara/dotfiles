@@ -52,7 +52,8 @@ for i = 1, 9 do
 end
 
 -- execute yamllint
-vim.keymap.set("n", "<C-l>y", "<cmd>split term://yamllint %<CR>")
+vim.keymap.set("n", "<C-l>y", "<cmd>split term://yamllint %<CR>", opts)
+vim.keymap.set("n", "<C-l>l", ":split term://lua ", opts)
 
 -- execute the open file (e.g. script.sh)
 local exe_lead = "<C-x>"
