@@ -9,6 +9,9 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, opts)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", opts)
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", opts)
 
+-- redo (undo with u)
+vim.keymap.set("n", "U", "<C-r>", opts)
+
 -- move the line bellow into current line with a space in between
 vim.keymap.set("n", "J", "mzJ`z", opts)
 
@@ -48,7 +51,8 @@ for i = 1, 9 do
     vim.keymap.set("n", tab_lead .. i, ":tabn " .. i .. "<CR>", opts)
 end
 
-vim.keymap.set("n", "<C-#>y", "<cmd>split term://yamllint %<CR>")
+-- execute yamllint
+vim.keymap.set("n", "<C-l>y", "<cmd>split term://yamllint %<CR>")
 
 -- execute the open file (e.g. script.sh)
 local exe_lead = "<C-x>"
@@ -60,15 +64,16 @@ local make_lead = "<C-m>"
 vim.keymap.set("n", make_lead .. "m", ":make ", opts)
 vim.keymap.set("n", make_lead .. "x", ":make<CR>", opts)
 
--- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]]) --untested
-
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], opts)
 vim.keymap.set("n", "<leader>Y", [["+Y]], opts)
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]]) --untested
+-- cut line into the 'black hole register' aka. delete line
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+-- cut the selected line into 'black hole register', then paste copied content
+vim.keymap.set("v", "<leader>p", [["_dP]])
 
+-- change to normal mode from insert mode with ctrl+c
 vim.keymap.set("i", "<C-c>", "<Esc>", opts)
 
 --vim.keymap.set("n", "Q", "<nop>") --untested
@@ -82,6 +87,9 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")                            
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")                                     --untested
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) --untested
+
+-- open git menu
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, opts)
 
 -- source file
 vim.keymap.set("n", "<leader><leader>", ":so<CR>", opts)
