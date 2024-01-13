@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
 
     use { 'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
-        requires = {'windwp/nvim-ts-autotag'} }
+        requires = { 'windwp/nvim-ts-autotag' } }
     use('nvim-treesitter/playground')
 
     use('mbbill/undotree')
@@ -80,10 +80,14 @@ return require('packer').startup(function(use)
         }
     }
 
-    use { 'm4xshen/autoclose.nvim', config = function() require('autoclose').setup() end }
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
 
     use { "lukas-reineke/indent-blankline.nvim" }
 
     use 'tomasiser/vim-code-dark'
     use { "catppuccin/nvim", as = "catppuccin" }
+    --use { 'rose-pine/neovim', as = 'rose-pine' }
 end)
