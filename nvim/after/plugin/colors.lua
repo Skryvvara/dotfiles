@@ -1,5 +1,11 @@
 local theme = "catppuccin" -- catppuccin or codedark
 
+--[[
+vim.g.codedark_modern = 1
+vim.g.codedark_italics = 1
+vim.g.codedark_transparent = 0
+]]--
+
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = {     -- :h background
