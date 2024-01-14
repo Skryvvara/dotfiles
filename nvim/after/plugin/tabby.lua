@@ -26,7 +26,8 @@ end
 require('tabby.tabline').set(function(line)
     return {
         {
-            { '  ', hl = theme.head },
+            --{ '  ', hl = theme.head },
+            { '  ', hl = theme.head },
             line.sep('', theme.head, theme.fill),
         },
         line.tabs().foreach(function(tab)
@@ -37,15 +38,15 @@ require('tabby.tabline').set(function(line)
                 line.sep('', hl, theme.fill),
                 --tab.is_current() and '' or '',
                 tab.number(),
-                "",
+                --"",
                 icon,
                 tab.name(),
                 --tab.close_btn(''),
-                "",
+                --"",
                 tab_modified(tab.id),
                 line.sep('', hl, theme.fill),
                 hl = hl,
-                margin = '  ',
+                margin = ' ',
             }
         end),
         line.spacer(),
