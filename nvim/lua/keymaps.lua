@@ -77,7 +77,6 @@ vim.keymap.set("v", "<leader>p", [["_dP]])
 -- change to normal mode from insert mode with ctrl+c
 vim.keymap.set("i", "<C-c>", "<Esc>", opts)
 
---vim.keymap.set("n", "Q", "<nop>") --untested
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz") --untested
@@ -87,7 +86,8 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz") --untested
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")                                     --untested
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")                                     --untested
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]]) --untested
+-- search & replace multiple
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- open git menu
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git, opts)
