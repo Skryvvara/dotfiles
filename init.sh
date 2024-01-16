@@ -14,7 +14,7 @@ function ask() {
 }
 
 function check_link() {
-  [ -L "$1" ]
+  [ -L "$1" ] || [ -d "$1" ]
 }
 
 function is_installed() {
@@ -58,6 +58,7 @@ if ask "Do you want to install neovim config (--> $path)?"; then
 fi
 
 path=$(eval echo ~/.config/mc)
+local_path=$(eval echo ~/.local/share/mc)
 if ask "Do you want to install midnight commander config (--> $path)?"; then
   if is_installed mc; then
     success "mc is installed."
@@ -70,6 +71,16 @@ if ask "Do you want to install midnight commander config (--> $path)?"; then
   else
     if ln -s "$(realpath "mc")" "$path"; then
       success "instaled mc config."
+    else
+      error "could not link."
+    fi
+  fi
+
+  if check_link "$local_path"; then
+    warning "$local_path already exists."
+  else
+    if ln -s "$(realpath "mc-local")" "$local_path"; then
+      success "installed mc local share config"
     else
       error "could not link."
     fi
