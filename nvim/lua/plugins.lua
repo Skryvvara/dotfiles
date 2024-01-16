@@ -54,6 +54,8 @@ return require('packer').startup(function(use)
     use("folke/trouble.nvim")
     use('tpope/vim-fugitive')
 
+    use { 'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end }
+
     -- lsp zero
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -89,5 +91,6 @@ return require('packer').startup(function(use)
 
     use 'tomasiser/vim-code-dark'
     use { "catppuccin/nvim", as = "catppuccin" }
+    use { "monowave/nvim", as = "monowave" }
     --use { 'rose-pine/neovim', as = 'rose-pine' }
 end)

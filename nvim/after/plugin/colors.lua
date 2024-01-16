@@ -1,4 +1,4 @@
-local theme = "catppuccin" -- catppuccin or codedark
+local theme = "monowave" -- catppuccin or codedark
 
 --[[
 vim.g.codedark_modern = 1
@@ -6,13 +6,13 @@ vim.g.codedark_italics = 1
 vim.g.codedark_transparent = 0
 ]]--
 
-require("catppuccin").setup({
-    flavour = "mocha", -- latte, frappe, macchiato, mocha
+require("monowave").setup({
+    flavour = "dark", -- latte, frappe, macchiato, mocha
     background = {     -- :h background
-        light = "latte",
-        dark = "mocha",
+        light = "light",
+        dark = "dark",
     },
-    transparent_background = true, -- disables setting the background color.
+    transparent_background = false, -- disables setting the background color.
     show_end_of_buffer = false,    -- shows the '~' characters after the end of buffers
     term_colors = false,           -- sets terminal colors (e.g. `g:terminal_color_0`)
     dim_inactive = {
