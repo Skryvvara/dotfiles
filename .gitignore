@@ -1,3 +1,10 @@
+.DS_Store
+
 nvim/plugin/packer_compiled.lua
+
 mc-local/history
+
 tmux/plugins
+
+k9s/clusters
+k9s/k9s.log

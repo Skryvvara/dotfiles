@@ -106,3 +106,22 @@ if ask "Do you want to install tmux config? (--> $path)"; then
   fi
 fi
 
+path=$(eval echo ~/Library/Application Support/k9s)
+if ask "Do you want to isntall k9s config? (--> $path)"; then
+  if is_installed k9s; then
+    success "k9s is installed"
+  else
+    warning "k9s is not installed"
+  fi
+
+  if check_link "$path"; then
+    warning "$path already exists."
+  else
+    if ln -s "$(realpath "k9s")" "$path"; then
+      success "installed k9s config."
+    else
+      error "could not link"
+    fi
+  fi
+fi
+
