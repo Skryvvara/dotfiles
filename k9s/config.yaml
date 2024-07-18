@@ -10,7 +10,7 @@ k9s:
     logoless: false
     crumbsless: false
     noIcons: false
-    skin: catppuccin-mocha-transparent
+    skin: rose-pine #catppuccin-mocha-transparent
   skipLatestRevCheck: false
   disablePodCounting: false
   shellPod:

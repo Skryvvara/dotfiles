@@ -89,8 +89,8 @@ return require('packer').startup(function(use)
 
     use { "lukas-reineke/indent-blankline.nvim" }
 
-    use 'tomasiser/vim-code-dark'
-    use { "catppuccin/nvim", as = "catppuccin" }
-    use { "monowave/nvim", as = "monowave" }
-    --use { 'rose-pine/neovim', as = 'rose-pine' }
+    --use 'tomasiser/vim-code-dark'
+    --use { "catppuccin/nvim", as = "catppuccin" }
+    --use { "folke/tokyonight.nvim" }
+    use { 'rose-pine/neovim', as = 'rose-pine' }
 end)
