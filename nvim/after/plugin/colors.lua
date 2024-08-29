@@ -1,4 +1,8 @@
-local theme = "rose-pine"
+local theme = "everforest"
+
+require("everforest").setup({
+    transparent_background_level = 1,
+})
 
 if (theme == "codedark") then
     vim.g.codedark_modern = 1
